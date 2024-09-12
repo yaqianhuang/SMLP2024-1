@@ -89,7 +89,7 @@ We can look at an initial fit of moderate complexity:
 form = @formula(rt_trunc ~ 1 + spkr * prec * load +
                           (1 + spkr + prec + load | subj) +
                           (1 + spkr + prec + load | item))
-m0 = fit(MixedModel, form, kb07; contrasts)
+m0 = fit(MixedModel, form, kb07; contrasts, progress=true)
 ```
 
 The default display in Quarto uses the [pretty MIME show method](https://juliastats.org/MixedModels.jl/v4.7.1/mime/) for the model and omits the estimated correlations of the random effects.
